@@ -1,0 +1,16 @@
+
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Brain Games",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/brain-games.js"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
