@@ -1,16 +1,34 @@
-
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Brain Games",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "start": "node bin/brain-games.js"
+  "description": "Проект игры разума предстваляет собой 5 уникальных и разнообразных игр, которые проверят ваш мозг на прочность!",
+  "keywords": [
+    "brain",
+    "games",
+    "minigames",
+    "testyourbrain"
+  ],
+  "homepage": "https://github.com/ALex2BRO/frontend-project-44#readme",
+  "bugs": {
+    "url": "https://github.com/ALex2BRO/frontend-project-44/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALex2BRO/frontend-project-44.git"
+  },
+  "license": "ISC",
+  "author": "ALexey BRO",
+  "type": "module",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "brain-games": "./bin/brain-games.js"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {},
   "bin": {
     "brain-games": "bin/brain-games.js"
-  },
-  "author": "Your Name",
-  "license": "MIT"
+  }
 }
