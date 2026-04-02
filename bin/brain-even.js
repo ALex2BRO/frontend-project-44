@@ -4,7 +4,7 @@ import {userName} from '../src/cli.js';
 export const firstGame = () => {
     let correctAnswer;
     let countCorrectAnsver = 0;
-    let number = Math.ceil(Math.random()*10);
+    let number = Math.ceil(Math.random()*99);
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     while(correctAnswer !== 3){
         const answer = readlineSync.question(`Question: ${number} `);
