@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Проект игры разума предстваляет собой 5 уникальных и разнообразных игр, которые проверят ваш мозг на прочность!",
   "keywords": [
     "brain",
@@ -20,6 +20,10 @@
   "author": "ALexey BRO",
   "type": "module",
   "main": "brain-games.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "brain-games": "./bin/brain-games.js"
@@ -27,10 +31,6 @@
   "dependencies": {
     "http-server": "^14.1.1",
     "readline-sync": "^1.4.10"
-  },
-  "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
