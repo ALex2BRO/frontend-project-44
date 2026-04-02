@@ -25,9 +25,9 @@
     "brain-games": "./bin/brain-games.js"
   },
   "dependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "readline-sync": "^1.4.10"
   },
-  "devDependencies": {},
   "bin": {
     "brain-games": "bin/brain-games.js"
   }
