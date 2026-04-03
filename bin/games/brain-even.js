@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import {userName} from '../src/cli.js';
+import {userName} from '../../src/cli.js';
 
 export const firstGame = () => {
     let correctAnswer;
     let countCorrectAnsver = 0;
-    let number = Math.ceil(Math.random()*99);
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     while(correctAnswer !== 3){
+        let number = Math.ceil(Math.random()*99);
         const answer = readlineSync.question(`Question: ${number} `);
         console.log(`Your answer: ${answer}`);
         if(number % 2 === 0){
@@ -17,7 +17,6 @@ export const firstGame = () => {
         if(answer === correctAnswer){
             console.log('Correct!');
             countCorrectAnsver++;
-            number = Math.ceil(Math.random()*10);
         } 
         if(answer !== correctAnswer){
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
