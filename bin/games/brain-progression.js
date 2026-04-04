@@ -3,6 +3,7 @@ import {userName} from '../../src/cli.js';
 
 let progression = '';
 let correctAnswer = 0;
+let finish4 = 0;
 
 const currentProgression = () => {
     let progressionLastIndex = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
@@ -38,7 +39,9 @@ export const fourthGame = () => {
             break;
         } if(+answer === correctAnswer && countCorrectAnsver === 3){
             console.log(`Congratulations, ${userName}!`);
+            finish4 += 1;
             break;
         }
     }
 }
+export {finish4};

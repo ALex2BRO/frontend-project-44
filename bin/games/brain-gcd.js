@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import {userName} from '../../src/cli.js';
 
+let finish3 = 0;
+
 export const thirdGame = () => {
     let countCorrectAnsver = 0;
     console.log('Find the greatest common divisor of given numbers.');
@@ -26,7 +28,9 @@ export const thirdGame = () => {
             break;
         } if(+answer === correctAnswer && countCorrectAnsver === 3){
             console.log(`Congratulations, ${userName}!`);
+            finish3 += 1;
             break;
         }
     }
 }
+export {finish3};

@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import {userName} from '../../src/cli.js';
 
+let finish2 = 0;
+
 export const secondGame = () => {
     let correctAnswer;
     let countCorrectAnsver = 0;
@@ -34,7 +36,9 @@ export const secondGame = () => {
             break;
         } if(+answer === correctAnswer && countCorrectAnsver === 3){
             console.log(`Congratulations, ${userName}!`);
+            finish2 += 1;
             break;
         }
     }
 }
+export {finish2};
