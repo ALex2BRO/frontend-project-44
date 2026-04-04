@@ -1,6 +1,1 @@
 node_modules/
-.github\workflows/
-eslint.config.js/
-Makefile
-package-lock.json
-package.json
