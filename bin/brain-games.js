@@ -10,14 +10,18 @@ import { fifthGame } from './games/brain-prime.js';
 greetUser();
 firstGame();
 if(finish1 > 0){
+    greetUser();
     secondGame();
 }
 if(finish2 > 0){
+    greetUser();
     thirdGame();
 }
 if(finish3 > 0){
+    greetUser();
     fourthGame();
 }
 if(finish4 > 0){
+    greetUser();
     fifthGame();
 }
