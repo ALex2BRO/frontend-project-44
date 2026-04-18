@@ -6,7 +6,7 @@ let finish3 = 0;
 export const thirdGame = () => {
     let countCorrectAnsver = 0;
     console.log('Find the greatest common divisor of given numbers.');
-    while(countCorrectAnsver !== 3){
+    while (countCorrectAnsver !== 3){
         let a = Math.ceil(Math.random()*99);
         let b = Math.ceil(Math.random()*99);
         const gcd = (a, b) => { 
@@ -19,14 +19,14 @@ export const thirdGame = () => {
         let correctAnswer = gcd(a, b);
         const answer = readlineSync.question(`Question: ${a} ${b} `);
         console.log(`Your answer: ${answer}`);
-        if(+answer === correctAnswer){
+        if (+answer === correctAnswer){
             console.log('Correct!');
             countCorrectAnsver++;
-        } if(+answer !== correctAnswer){
+        } if (+answer !== correctAnswer){
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
             console.log(`Let's try again, ${userName}!`);
             break;
-        } if(+answer === correctAnswer && countCorrectAnsver === 3){
+        } if (+answer === correctAnswer && countCorrectAnsver === 3){
             console.log(`Congratulations, ${userName}!`);
             finish3 += 1;
             break;

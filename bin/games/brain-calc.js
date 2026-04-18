@@ -8,11 +8,11 @@ export const secondGame = () => {
     let countCorrectAnsver = 0;
     let sign;
     console.log('What is the result of the expression?');
-    while(countCorrectAnsver !== 3){
+    while (countCorrectAnsver !== 3){
         let a = Math.ceil(Math.random()*99);
         let b = Math.ceil(Math.random()*99);
         let signChange = Math.ceil(Math.random()*3);
-        switch(signChange){
+        switch (signChange){
             case 1:
                 sign = `${a} + ${b}`;
                 correctAnswer = a + b;
@@ -27,14 +27,14 @@ export const secondGame = () => {
         }
         const answer = readlineSync.question(`Question: ${sign} `);
         console.log(`Your answer: ${answer}`);
-        if(+answer === correctAnswer){
+        if (+answer === correctAnswer){
             console.log('Correct!');
             countCorrectAnsver++;
-        } if(+answer !== correctAnswer){
+        } if (+answer !== correctAnswer){
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
             console.log(`Let's try again, ${userName}!`);
             break;
-        } if(+answer === correctAnswer && countCorrectAnsver === 3){
+        } if (+answer === correctAnswer && countCorrectAnsver === 3){
             console.log(`Congratulations, ${userName}!`);
             finish2 += 1;
             break;

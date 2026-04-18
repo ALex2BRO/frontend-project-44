@@ -9,15 +9,15 @@ import { fifthGame } from './games/brain-prime.js';
 
 greetUser();
 firstGame();
-if(finish1 > 0){
+if (finish1 > 0){
     secondGame();
 }
-if(finish2 > 0){
+if (finish2 > 0){
     thirdGame();
 }
-if(finish3 > 0){
+if (finish3 > 0){
     fourthGame();
 }
-if(finish4 > 0){
+if (finish4 > 0){
     fifthGame();
 }
