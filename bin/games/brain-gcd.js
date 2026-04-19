@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import {userName} from '../../src/cli.js';
+import readlineSync from 'readline-sync'
+import {userName} from '../../src/cli.js'
 
 let finish3 = 0;
 
