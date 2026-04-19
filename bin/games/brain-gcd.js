@@ -1,36 +1,36 @@
 import readlineSync from 'readline-sync'
 import {userName} from '../../src/cli.js'
 
-let finish3 = 0;
+let finish3 = 0
 
 export const thirdGame = () => {
-    let countCorrectAnsver = 0;
-    console.log('Find the greatest common divisor of given numbers.');
+    let countCorrectAnsver = 0
+    console.log('Find the greatest common divisor of given numbers.')
     while (countCorrectAnsver !== 3){
-        let a = Math.ceil(Math.random()*99);
-        let b = Math.ceil(Math.random()*99);
+        let a = Math.ceil(Math.random()*99)
+        let b = Math.ceil(Math.random()*99)
         const gcd = (a, b) => { 
             while (b!==0){
-                let temp = b; 
-                b = a % b;
-                a = temp; 
-            } return a; 
+                let temp = b 
+                b = a % b
+                a = temp 
+            } return a 
         }
-        let correctAnswer = gcd(a, b);
-        const answer = readlineSync.question(`Question: ${a} ${b} `);
-        console.log(`Your answer: ${answer}`);
+        let correctAnswer = gcd(a, b)
+        const answer = readlineSync.question(`Question: ${a} ${b} `)
+        console.log(`Your answer: ${answer}`)
         if (+answer === correctAnswer){
-            console.log('Correct!');
-            countCorrectAnsver++;
+            console.log('Correct!')
+            countCorrectAnsver++
         } if (+answer !== correctAnswer){
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-            console.log(`Let's try again, ${userName}!`);
-            break;
+            console.log(`Let's try again, ${userName}!`)
+            break
         } if (+answer === correctAnswer && countCorrectAnsver === 3){
-            console.log(`Congratulations, ${userName}!`);
-            finish3 += 1;
-            break;
+            console.log(`Congratulations, ${userName}!`)
+            finish3 += 1
+            break
         }
     }
 }
-export {finish3};
+export {finish3}

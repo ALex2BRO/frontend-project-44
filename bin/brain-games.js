@@ -7,17 +7,17 @@ import { thirdGame, finish3 } from './games/brain-gcd.js'
 import { fourthGame, finish4 } from './games/brain-progression.js'
 import { fifthGame } from './games/brain-prime.js'
 
-greetUser();
-firstGame();
+greetUser()
+firstGame()
 if (finish1 > 0){
-    secondGame();
+    secondGame()
 }
 if (finish2 > 0){
-    thirdGame();
+    thirdGame()
 }
 if (finish3 > 0){
-    fourthGame();
+    fourthGame()
 }
 if (finish4 > 0){
-    fifthGame();
+    fifthGame()
 }
