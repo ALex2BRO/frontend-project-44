@@ -1,4 +1,4 @@
-const findGCD = require('./brain-gcd');
+const findGCD = require('../bin/games/brain-gcd');
 
 describe('Brain GCD Game', () => {
   test('should find GCD of two numbers', () => {

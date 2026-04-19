@@ -1,4 +1,4 @@
-const isEven = require('./brain-even');
+const isEven = require('../bin/games/brain-even');
 
 describe('Brain Even Game', () => {
   test('should return true for even numbers', () => {

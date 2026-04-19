@@ -1,4 +1,4 @@
-const calculate = require('./brain-calc');
+const calculate = require('../bin/games/brain-calc');
 
 describe('Brain Calc Game', () => {
   test('should correctly add numbers', () => {

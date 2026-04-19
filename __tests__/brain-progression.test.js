@@ -1,4 +1,4 @@
-const generateProgression = require('./brain-progression');
+const generateProgression = require('../bin/games/brain-progression');
 
 describe('Brain Progression Game', () => {
   test('should generate arithmetic progression with common difference 2', () => {

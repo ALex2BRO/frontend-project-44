@@ -1,4 +1,4 @@
-const { runGame } = require('./brain-games');
+const { runGame } = require('../bin/brain-games');
 
 describe('Brain Games Main', () => {
   test('should initialize game with correct parameters', () => {

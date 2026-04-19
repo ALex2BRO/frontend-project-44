@@ -1,4 +1,4 @@
-const isPrime = require('./brain-prime');
+const isPrime = require('../bin/games/brain-prime');
 
 describe('Brain Prime Game', () => {
   test('should identify prime numbers', () => {
