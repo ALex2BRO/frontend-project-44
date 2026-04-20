@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import { userName } from '../../src/cli.js';
-import { firstGame, finish1 } from '../../bin/games/brain-even';
+import { firstGame, finish1 } from '../../src/games/brain-even.js';
 
 jest.mock('readline-sync', () => ({
   question: jest.fn(),
