@@ -32,12 +32,20 @@
     "test": "jest",
     "brain-games": "./bin/brain-games.js"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
   "dependencies": {
     "http-server": "^14.1.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
     "@eslint/js": "^10.0.1",
+    "babel-jest": "^30.3.0",
     "eslint": "^10.1.0",
     "globals": "^17.4.0",
     "jest": "^30.3.0"
