@@ -11,7 +11,7 @@
 | Игра | Описание | Команда для запуска |
 
 **brain-prime (Простое ли число?)** 
-[![asciicast]](https://asciinema.org/a/IkmfNCx3BYDYt2VI)
+[![asciicast](https://asciinema.org/a/abcd1234-ef56-7890-gh12-ijkl34567890.svg)](https://asciinema.org/a/IkmfNCx3BYDYt2VI)
 Описание: Показывается случайное число. Нужно ответить `yes`, если число простое, иначе `no`.
 [/] Команда для запуска:  node bin/brain-prime.js
 
