@@ -1,3 +1,7 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/ALex2BRO/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ALex2BRO/frontend-project-44/actions)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=ALex2BRO_frontend-project-44)](https://sonarcloud.io/summary/new_code?id=ALex2BRO_frontend-project-44)
+
 # Brain Games
 
 «Игры разума» — набор из пяти консольных игр, проверяющих твой разум. Каждая игра задаёт вопросы, на которые нужно дать правильные ответы. После трёх правильных ответов подряд каждая из игр считается пройденной. Неправильный ответ завершает игру и предлагает пройти её заново.
