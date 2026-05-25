@@ -41,4 +41,4 @@ export const secondGame = () => {
         }
     }
 }
-export {finish2}
+export {finish2} 
