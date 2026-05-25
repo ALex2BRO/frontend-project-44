@@ -1,5 +1,16 @@
-# Automatic tests
+# Brain Games
 
-After completing all the steps in the project, automatic tests will become available to you. Tests are run on each commit - once all tasks in the Hexlet interface are completed, make a commit, and the tests will run automatically.
+«Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново.
 
-The hexlet-check.yml file is responsible for running these tests - do not delete this file, edit it, or rename the repository.
+## Минимальные требования
+
+- Node.js версии 13 и выше
+- npm версии 6 и выше
+
+## Установка
+
+```bash
+git clone git@github.com:ALex2BRO/frontend-project-44.git
+cd frontend-project-44
+npm install
+node bin/brain-games.js

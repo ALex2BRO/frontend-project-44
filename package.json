@@ -1,25 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Проект игры разума предстваляет собой 5 уникальных и разнообразных игр, которые проверят ваш мозг на прочность!",
-  "keywords": [
-    "brain",
-    "games",
-    "minigames",
-    "testyourbrain"
-  ],
-  "homepage": "https://github.com/ALex2BRO/frontend-project-44#readme",
-  "bugs": {
-    "url": "https://github.com/ALex2BRO/frontend-project-44/issue"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ALex2BRO/frontend-project-44.git"
-  },
-  "license": "ISC",
-  "author": "ALexey BRO",
+  "description": "Brain Games - набор консольных игр",
   "type": "module",
-  "main": "brain-games.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -29,26 +12,25 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "scripts": {
-    "brain-games": "./bin/brain-games.js",
-    "build": "npm run build:js",
-    "test": "rspec"
+    "test": "jest"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/frontend-project-44.git"
   },
+  "author": "Your Name",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/your-username/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/your-username/frontend-project-44#readme",
   "dependencies": {
-    "http-server": "^14.1.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
-    "@eslint/js": "^10.0.1",
-    "babel-jest": "^30.3.0",
-    "eslint": "^10.1.0",
-    "globals": "^17.4.0",
-    "jest": "^30.3.0"
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "jest": "^29.7.0"
   }
 }
