@@ -1,47 +1,26 @@
-import readlineSync from 'readline-sync'
-import {userName} from '../cli.js'
+#!/usr/bin/env node
 
-let progression = ''
-let correctAnswer = 0
-let finish4 = 0
+import { playGame } from '../src/index.js';
+import { getRandomNumber } from '../src/utils.js';
 
-const currentProgression = () => {
-    let progressionLastIndex = Math.floor(Math.random() * (10 - 5 + 1)) + 5
-    let progressionStep = Math.ceil(Math.random()*99)
-    let startIndex = Math.ceil(Math.random()*99)
-    let current = Math.ceil(Math.random()*progressionLastIndex)
-    for (let i = 0; i < progressionLastIndex; i++){
-        let currentElement = startIndex + i * progressionStep
-        if (i === current){
-            progression += '.. '
-            correctAnswer += currentElement
-        } else {
-            progression += `${currentElement} `
-        }
-    }
-}
+const description = 'What number is missing in the progression?';
 
-export const fourthGame = () => {
-    let countCorrectAnsver = 0
-    console.log('What number is missing in the progression?')
-    while (countCorrectAnsver !== 3){
-        correctAnswer = 0
-        currentProgression()
-        const answer = readlineSync.question(`Question: ${progression} `)
-        console.log(`Your answer: ${answer}`)
-        if (+answer === correctAnswer){
-            console.log('Correct!')
-            countCorrectAnsver++
-            progression = ''
-        } if (+answer !== correctAnswer){
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-            console.log(`Let's try again, ${userName}!`)
-            break
-        } if (+answer === correctAnswer && countCorrectAnsver === 3){
-            console.log(`Congratulations, ${userName}!`)
-            finish4 += 1
-            break
-        }
-    }
-}
-export {finish4}
+const generateRound = () => {
+  const length = getRandomNumber(5, 10);
+  const start = getRandomNumber(1, 20);
+  const step = getRandomNumber(1, 10);
+  const hiddenIndex = getRandomNumber(0, length - 1);
+  
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step);
+  }
+  
+  const correctAnswer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
+  
+  return [question, correctAnswer];
+};
+
+playGame(description, generateRound);

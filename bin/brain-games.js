@@ -1,23 +1,7 @@
-#!/!/usr/bin/env node
+#!/usr/bin/env node
 
-import { greetUser } from '../src/cli.js'
-import { firstGame, finish1 } from './games/brain-even.js'
-import { secondGame, finish2 } from './games/brain-calc.js'
-import { thirdGame, finish3 } from './games/brain-gcd.js'
-import { fourthGame, finish4 } from './games/brain-progression.js'
-import { fifthGame } from './games/brain-prime.js'
+import readlineSync from 'readline-sync';
 
-greetUser()
-firstGame()
-if (finish1 > 0){
-    secondGame()
-}
-if (finish2 > 0){
-    thirdGame()
-}
-if (finish3 > 0){
-    fourthGame()
-}
-if (finish4 > 0){
-    fifthGame()
-} 
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}!`);

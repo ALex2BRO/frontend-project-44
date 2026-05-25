@@ -1,44 +1,34 @@
-import readlineSync from 'readline-sync'
-import {userName} from '../cli.js'
+#!/usr/bin/env node
 
-let finish2 = 0
+import { playGame } from '../src/index.js';
+import { getRandomNumber } from '../src/utils.js';
 
-export const secondGame = () => {
-    let correctAnswer
-    let countCorrectAnsver = 0
-    let sign
-    console.log('What is the result of the expression?')
-    while (countCorrectAnsver !== 3){
-        let a = Math.ceil(Math.random()*99)
-        let b = Math.ceil(Math.random()*99)
-        let signChange = Math.ceil(Math.random()*3)
-        switch (signChange){
-            case 1:
-                sign = `${a} + ${b}`
-                correctAnswer = a + b
-                break
-            case 2:
-                sign = `${a} - ${b}`
-                correctAnswer = a - b
-                break
-            default:
-                sign = `${a} * ${b}`
-                correctAnswer = a * b
-        }
-        const answer = readlineSync.question(`Question: ${sign} `)
-        console.log(`Your answer: ${answer}`)
-        if (+answer === correctAnswer){
-            console.log('Correct!')
-            countCorrectAnsver++
-        } if (+answer !== correctAnswer){
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-            console.log(`Let's try again, ${userName}!`)
-            break
-        } if (+answer === correctAnswer && countCorrectAnsver === 3){
-            console.log(`Congratulations, ${userName}!`)
-            finish2 += 1
-            break
-        }
-    }
-}
-export {finish2} 
+const description = 'What is the result of the expression?';
+
+const generateRound = () => {
+  const num1 = getRandomNumber(1, 50);
+  const num2 = getRandomNumber(1, 50);
+  const operators = ['+', '-', '*'];
+  const operator = operators[Math.floor(Math.random() * operators.length)];
+  
+  const question = `${num1} ${operator} ${num2}`;
+  let correctAnswer;
+  
+  switch (operator) {
+    case '+':
+      correctAnswer = num1 + num2;
+      break;
+    case '-':
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
+      correctAnswer = num1 * num2;
+      break;
+    default:
+      correctAnswer = 0;
+  }
+  
+  return [question, String(correctAnswer)];
+};
+
+playGame(description, generateRound);
