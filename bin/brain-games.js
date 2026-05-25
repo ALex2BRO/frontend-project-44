@@ -20,4 +20,4 @@ if (finish3 > 0){
 }
 if (finish4 > 0){
     fifthGame()
-}
+} 
