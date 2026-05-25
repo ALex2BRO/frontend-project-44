@@ -1,34 +1,50 @@
-#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import { userName } from '../cli.js';
+import getRandomInt from '../utils.js';
 
-import { playGame } from '../src/index.js';
-import { getRandomNumber } from '../src/utils.js';
+let finish2 = 0;
 
-const description = 'What is the result of the expression?';
+export const secondGame = () => {
+  let correctAnswersCount = 0;
+  console.log('What is the result of the expression?');
 
-const generateRound = () => {
-  const num1 = getRandomNumber(1, 50);
-  const num2 = getRandomNumber(1, 50);
-  const operators = ['+', '-', '*'];
-  const operator = operators[Math.floor(Math.random() * operators.length)];
-  
-  const question = `${num1} ${operator} ${num2}`;
-  let correctAnswer;
-  
-  switch (operator) {
-    case '+':
-      correctAnswer = num1 + num2;
-      break;
-    case '-':
-      correctAnswer = num1 - num2;
-      break;
-    case '*':
-      correctAnswer = num1 * num2;
-      break;
-    default:
-      correctAnswer = 0;
+  while (correctAnswersCount < 3) {
+    const a = getRandomInt(1, 100);
+    const b = getRandomInt(1, 100);
+    const operators = ['+', '-', '*'];
+    const operator = operators[getRandomInt(0, operators.length - 1)];
+    const question = `${a} ${operator} ${b}`;
+
+    let correctAnswer;
+    switch (operator) {
+      case '+':
+        correctAnswer = a + b;
+        break;
+      case '-':
+        correctAnswer = a - b;
+        break;
+      case '*':
+        correctAnswer = a * b;
+        break;
+      default:
+        correctAnswer = null;
+    }
+
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    console.log(`Your answer: ${userAnswer}`);
+
+    if (Number(userAnswer) === correctAnswer) {
+      console.log('Correct!');
+      correctAnswersCount += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
   }
-  
-  return [question, String(correctAnswer)];
+
+  console.log(`Congratulations, ${userName}!`);
+  finish2 = 1;
 };
 
-playGame(description, generateRound);
+export { finish2 };

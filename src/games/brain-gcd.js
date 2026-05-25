@@ -1,25 +1,36 @@
-#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import { userName } from '../cli.js';
+import getRandomInt from '../utils.js';
 
-import { playGame } from '../src/index.js';
-import { getRandomNumber } from '../src/utils.js';
+let finish3 = 0;
 
-const description = 'Find the greatest common divisor of given numbers.';
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
-const findGCD = (a, b) => {
-  while (b !== 0) {
-    const temp = b;
-    b = a % b;
-    a = temp;
+export const thirdGame = () => {
+  let correctAnswersCount = 0;
+  console.log('Find the greatest common divisor of given numbers.');
+
+  while (correctAnswersCount < 3) {
+    const a = getRandomInt(1, 100);
+    const b = getRandomInt(1, 100);
+    const question = `${a} ${b}`;
+    const correctAnswer = gcd(a, b).toString();
+
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    console.log(`Your answer: ${userAnswer}`);
+
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      correctAnswersCount += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
   }
-  return a;
+
+  console.log(`Congratulations, ${userName}!`);
+  finish3 = 1;
 };
 
-const generateRound = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
-  const question = `${num1} ${num2}`;
-  const correctAnswer = String(findGCD(num1, num2));
-  return [question, correctAnswer];
-};
-
-playGame(description, generateRound);
+export { finish3 };

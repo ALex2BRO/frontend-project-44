@@ -1,15 +1,32 @@
-#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import { userName } from '../cli.js';
+import getRandomInt from '../utils.js';
 
-import { playGame } from '../src/index.js';
-import { getRandomNumber, isEven } from '../src/utils.js';
+let finish1 = 0;
 
-const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+export const firstGame = () => {
+  let correctAnswersCount = 0;
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-const generateRound = () => {
-  const number = getRandomNumber(1, 100);
-  const question = String(number);
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  while (correctAnswersCount < 3) {
+    const number = getRandomInt(1, 100);
+    const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+
+    const userAnswer = readlineSync.question(`Question: ${number}\nYour answer: `);
+    console.log(`Your answer: ${userAnswer}`);
+
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      correctAnswersCount += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+  }
+
+  console.log(`Congratulations, ${userName}!`);
+  finish1 = 1;
 };
 
-playGame(description, generateRound);
+export { finish1 };
