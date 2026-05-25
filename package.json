@@ -29,8 +29,9 @@
     "brain-prime": "src/games/brain-prime.js"
   },
   "scripts": {
-    "test": "jest",
-    "brain-games": "./bin/brain-games.js"
+    "brain-games": "./bin/brain-games.js",
+    "build": "npm run build:js",
+    "test": "rspec"
   },
   "jest": {
     "transform": {
