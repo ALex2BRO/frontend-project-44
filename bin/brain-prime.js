@@ -3,7 +3,7 @@
 import { playGame } from '../src/index.js';
 import { getRandomNumber } from '../src/utils.js';
 
-const description = 'Answer "yes" if given number is prime, otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';  // ← точка вместо запятой
 
 const isPrime = (num) => {
   if (num < 2) return false;
