@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync'
-import { askUserName } from './cli.js'
+import { askUserName } from './src/cli.js'
 
 const ROUNDS_COUNT = 3
 
