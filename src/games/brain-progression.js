@@ -1,47 +1,23 @@
-import readlineSync from 'readline-sync'
-import {userName} from '../cli.js'
+import getRandomInt from '../utils.js'
 
-let progression = ''
-let correctAnswer = 0
-let finish4 = 0
+export const description = 'What number is missing in the progression?'
 
-const currentProgression = () => {
-    let progressionLastIndex = Math.floor(Math.random() * (10 - 5 + 1)) + 5
-    let progressionStep = Math.ceil(Math.random()*99)
-    let startIndex = Math.ceil(Math.random()*99)
-    let current = Math.ceil(Math.random()*progressionLastIndex)
-    for (let i = 0; i < progressionLastIndex; i++){
-        let currentElement = startIndex + i * progressionStep
-        if (i === current){
-            progression += '.. '
-            correctAnswer += currentElement
-        } else {
-            progression += `${currentElement} `
-        }
-    }
+const generateProgression = (start, step, length) => {
+  const progression = []
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i)
+  }
+  return progression
 }
 
-export const fourthGame = () => {
-    let countCorrectAnsver = 0
-    console.log('What number is missing in the progression?')
-    while (countCorrectAnsver !== 3){
-        correctAnswer = 0
-        currentProgression()
-        const answer = readlineSync.question(`Question: ${progression} `)
-        console.log(`Your answer: ${answer}`)
-        if (+answer === correctAnswer){
-            console.log('Correct!')
-            countCorrectAnsver++
-            progression = ''
-        } if (+answer !== correctAnswer){
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-            console.log(`Let's try again, ${userName}!`)
-            break
-        } if (+answer === correctAnswer && countCorrectAnsver === 3){
-            console.log(`Congratulations, ${userName}!`)
-            finish4 += 1
-            break
-        }
-    }
+export const generateRound = () => {
+  const start = getRandomInt(1, 20)
+  const step = getRandomInt(1, 10)
+  const length = getRandomInt(5, 10)
+  const progression = generateProgression(start, step, length)
+  const hiddenIndex = getRandomInt(0, length - 1)
+  const correctAnswer = progression[hiddenIndex]
+  progression[hiddenIndex] = '..'
+  const question = progression.join(' ')
+  return [question, String(correctAnswer)]
 }
-export {finish4}
